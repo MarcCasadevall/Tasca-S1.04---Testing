@@ -1,70 +1,61 @@
-Proyecto: Tests con JUnit
+Project: Testing with JUnit
+Description: Learn how to apply automated testing in Java using JUnit 5, focusing on practical functionalities such as book management, ID (DNI) calculation, and exception handling.
 
-Descripción: Aprender a aplicar tests automatizados en Java con JUnit 5, trabajando funciones prácticas como la gestión de libros, cálculo de DNI y control de excepciones.
+📌 Exercise Breakdown
+Exercise 1: Unit Testing with JUnit
 
-📌 Enunciado de los ejercicios
-Ejercicio 1: Tests unitarios con JUnit
+Manage a library book collection with features like adding, deleting, retrieving books, and returning a sorted list.
 
-Gestionar una colección de libros de una biblioteca con funcionalidades como agregar, eliminar, obtener libros y devolver la lista ordenada.
+Implement unit tests to validate the correct execution of all methods and prevent duplicates.
 
-Implementar tests unitarios para validar la correcta ejecución de todos los métodos y evitar duplicados.
+Exercise 2: Parameterized Testing
 
-Ejercicio 2: Test parametrizado
+Create a CalculoDni class to calculate the National ID (DNI) letter based on its number.
 
-Crear una clase CalculoDni para calcular la letra del DNI a partir del número.
+Implement parameterized tests covering various valid and invalid cases to ensure functionality.
 
-Implementar tests parametrizados con varios casos válidos e inválidos para validar la funcionalidad.
+Exercise 3: Exception Handling
 
-Ejercicio 3: Control de Excepciones
+Create a method that triggers an ArrayIndexOutOfBoundsException.
 
-Crear un método que provoque un ArrayIndexOutOfBoundsException.
+Implement tests to verify that the exception is thrown correctly under expected conditions.
 
-Implementar tests que comprueben que la excepción se lanza correctamente bajo las condiciones esperadas.
+✨ Features
+Add, remove, and query books within a collection.
 
-✨ Funcionalidades
+Alphabetical sorting of the collection without modifying the original list.
 
-Agregar, eliminar y consultar libros en una colección.
+DNI letter calculation with validation for invalid numbers.
 
-Ordenación alfabética de la colección sin modificar la original.
+Exception triggering and verification in Java.
 
-Cálculo de la letra de DNI con validación de números inválidos.
+Comprehensive Unit and Parameterized testing with JUnit 5.
 
-Control de lanzamiento y comprobación de excepciones en Java.
+🛠 Technologies
+Backend: Java, JUnit 5
 
-Tests unitarios y parametrizados con JUnit 5.
+Build Tool: Maven
 
-🛠 Tecnologías
+🚀 Installation & Execution
+Clone the repository:
+git clone <repository-link>
 
-Frontend: React, Tailwind (si se quiere visualizar resultados o interfaz)
+Environment Variables:
+Create a .env file with the necessary configurations (if database connection is required).
 
-Backend: Java, Maven/Gradle, JUnit 5
+Running the Application:
 
-Base de datos: MySQL, MongoDB (solo si el proyecto se amplía con persistencia, opcional)
+Compile with Maven: mvn compile
 
-🚀 Instalación y Ejecución
+Run Tests: mvn test
 
-Clonar el repositorio: git clone <enlace-repositorio>
+Testing: JUnit tests are located in src/test/java. Run all tests to validate class behavior.
 
-Variables de entorno: Crear .env con las configuraciones necesarias (si se conecta con DB)
+🧩 Diagrams & Technical Decisions
+Modular Class Structure: Separate classes for each functionality (LibraryManager, CalculoDni, ArrayExceptionExample).
 
-Ejecución de la aplicación:
+Separation of Concerns: Using unit and parameterized tests to keep logic and validation distinct.
 
-Compilar con Maven: mvn compile
+Data Integrity: Prevention of duplicates and secure handling of collections.
 
-Ejecutar tests: mvn test
-
-Pruebas: Los tests JUnit se encuentran en src/test/java. Ejecutar todos para validar el comportamiento de las clases.
-
-📸 Demo
-
-Capturas de pantalla de los tests pasando correctamente o enlace a un proyecto de demostración con Vercel/Netlify (opcional si hay frontend).
-
-🧩 Diagramas y justificación de decisiones técnicas
-
-Estructura de clases simple y modular: una clase para cada funcionalidad (LibraryManager, CalculoDni, ArrayExceptionExample).
-
-Uso de tests unitarios y parametrizados para separar lógica y validación.
-
-Evitación de duplicados y manipulación segura de colecciones.
-
-Seguridad con excepciones: comprobación de valores inválidos y control de errores previsibles.
+Exception Safety: Validation of invalid values and control of predictable errors.
