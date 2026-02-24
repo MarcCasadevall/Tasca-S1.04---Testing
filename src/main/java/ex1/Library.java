@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class Library {
 
-    private ArrayList<Book> library = new ArrayList<>();
+    private ArrayList<Book> library;
     public Library() {
         this.library = new ArrayList<>();
     }
@@ -29,6 +29,16 @@ public class Library {
         this.library.add(newBook);
     }
 
+    public void addBookIndex(int index,Book newBook) {
+        for (Book book : this.library) {
+            if (book.getName().equalsIgnoreCase(newBook.getName())) {
+                System.out.println("The book already exists.");
+                return;
+            }
+        }
+     this.library.add(index,newBook);
+    }
+
     public String showLibrary() {
         return "Books in the library: " + getLibrary();
     }
@@ -44,6 +54,13 @@ public class Library {
             }
         }
     }
+    public int getSize() {
+        return this.library.size();
+    }
+    public Book getBook(int index) {
+        return this.library.get(index);
+    }
+
     public void sortAlphabetic(){
         Collections.sort(library);
     }
