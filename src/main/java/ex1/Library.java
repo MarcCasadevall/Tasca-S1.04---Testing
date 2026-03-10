@@ -2,22 +2,19 @@ package ex1;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Library {
 
     private ArrayList<Book> library;
+
     public Library() {
         this.library = new ArrayList<>();
     }
 
-    public ArrayList<Book> getLibrary() {
-        return library;
+    public List<Book> getLibrary() {
+        return Collections.unmodifiableList(library);
     }
-
-    public void setLibrary(ArrayList<Book> library) {
-        this.library = library;
-    }
-
 
     public void addBook(Book newBook) {
         for (Book book : this.library) {
@@ -29,14 +26,14 @@ public class Library {
         this.library.add(newBook);
     }
 
-    public void addBookIndex(int index,Book newBook) {
+    public void addBookIndex(int index, Book newBook) {
         for (Book book : this.library) {
             if (book.getName().equalsIgnoreCase(newBook.getName())) {
                 System.out.println("The book already exists.");
                 return;
             }
         }
-     this.library.add(index,newBook);
+        this.library.add(index, newBook);
     }
 
     public String showLibrary() {
@@ -54,14 +51,25 @@ public class Library {
             }
         }
     }
+
     public int getSize() {
         return this.library.size();
     }
+
     public Book getBook(int index) {
         return this.library.get(index);
     }
 
-    public void sortAlphabetic(){
+    public String getBookByPosition(int index) {
+
+        if (index >= 0 && index < library.size()) {
+            return library.get(index).getName();
+        } else {
+            return "OutOfBounds";
+        }
+    }
+
+    public void sortAlphabetic() {
         Collections.sort(library);
     }
 

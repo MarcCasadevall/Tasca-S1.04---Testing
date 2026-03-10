@@ -9,14 +9,18 @@ public class Main {
         System.out.println(libraryA.showLibrary());
 
         Library libraryB = new Library();
-        libraryB.setLibrary(new ArrayList<>(libraryA.getLibrary()));
+
+        for (Book book : libraryA.getLibrary()) {
+            libraryB.addBook(book);
+        }
+        
         libraryB.sortAlphabetic();
         System.out.println(libraryB.showLibrary());
 
-       GetBookByPosition searchBook = new GetBookByPosition();
-       String name1 = searchBook.getBookByPosition(libraryA,1);
+
+        String name1 = libraryA.getBookByPosition(1);
         System.out.println("Name of the book search is: " + name1);
-        String name2 = searchBook.getBookByPosition(libraryB,1);
+        String name2 = libraryB.getBookByPosition(1);
         System.out.println("Name of the book search is: " + name2);
     }
 }

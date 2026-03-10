@@ -1,6 +1,6 @@
 package ex1;
 
-public class Book implements Comparable<Book>{
+public class Book implements Comparable<Book> {
 
     private final String name;
     private final double price;
